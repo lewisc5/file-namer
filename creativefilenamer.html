@@ -228,10 +228,11 @@
       const description = document.getElementById('description').value.trim();
       //const extension = document.getElementById('extension').value;
       const date = document.getElementById('date').value;
-	
+
+		let newdescription = description.replaceAll(' ', '_');
 		let newdate = date.replace(/-/g, "");
 		
-      let parts = [brand, prodcamp, assettype, destination, description, channel, aspectratio, version, newdate];
+      let parts = [brand, prodcamp, assettype, destination, newdescription, channel, aspectratio, version, newdate];
   //    if (description) {
   //      parts.push(description.replace(/\s+/g, ''));
   //    }
