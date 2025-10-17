@@ -2,8 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-<meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline'">
-  
+<meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';">
+<meta http-equiv="Permissions-Policy" content="clipboard-write=(self)">
+
   <title>File Name Generator</title>
   <style>
     body {
@@ -130,8 +131,8 @@
     <option value="V1">V1</option>
     <option value="V2">V2</option>
     <option value="V3">V3</option>
-    <option value="V3">V4</option>
-    <option value="V3">V5</option>	
+    <option value="V4">V4</option>
+    <option value="V5">V5</option>	
     <option value="Final">Final</option>
   </select>
   
@@ -163,9 +164,7 @@
   
    <label for="date">Date</label>
    <div>For working files: Current date / For final assets: Delivery date</div>
-  <input type="date"
-  id="date"
-  value=today />
+  <input type="date" id="date" />
 
   <label for="description">Custom description</label>
   <input type="text" id="description" placeholder="e.g. file name">
@@ -176,6 +175,7 @@
    <button onclick="copyText()">📋 Copy to Clipboard</button>
 
   <script>
+
 	const brandSelect = document.getElementById('brand');
 	const customInput = document.getElementById('customBrand');
 
@@ -228,8 +228,8 @@
       const description = document.getElementById('description').value.trim();
       //const extension = document.getElementById('extension').value;
       const date = document.getElementById('date').value;
-
-		let newdescription = description.replaceAll(' ', '_');
+	
+	let newdescription = description.replaceAll(' ', '_');
 		let newdate = date.replace(/-/g, "");
 		
       let parts = [brand, prodcamp, assettype, destination, newdescription, channel, aspectratio, version, newdate];
