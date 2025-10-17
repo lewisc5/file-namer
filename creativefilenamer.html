@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+ <meta http-equiv="Content-Security-Policy" content="script-src 'sha256-hk10xkkv7Z//1wzYc1TdUHO82hAFWhTl+o4L3/4qgwU=';">
+  
+  <title>File Name Generator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+      max-width: 600px;
+    }
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+    select, input[type="text"] {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      box-sizing: border-box;
+    }
+    button {
+      margin-top: 20px;
+      padding: 10px 15px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    #output {
+      margin-top: 20px;
+      padding: 10px;
+      background: #f4f4f4;
+      font-family: monospace;
+      border: 1px solid #ccc;
+      word-break: break-all;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>📁 File Name Generator</h2>
+
+  <label for="brand">Brand Name</label>
+  <select id="brand">
+    <option value="K12">K12</option>
+    <option value="MPS">Managed Public Schools (MPS)</option>
+    <option value="PVT">Private</option>
+	<option value="LLO">Learning Liftoff</option>
+	<option value="Stride">Stride</option>
+	<option value="Tallo">Tallo</option>
+	<option value="Tutoring">Tutoring</option>
+	<option value="LearningHub">Learning Hub</option>
+	<option value="custom">Custom</option>
+  </select>
+  
+  <input type="text" id="customBrand" placeholder="Enter custom brand acronym" style="display: none; margin-top: 10px;">
+
+<label for="prodcamp">Product or Campaign</label>
+<select id="prodcamp">
+  <option value="CareerAndCollegePrep">Career and College Prep</option>
+  <option value="Flex">Flex</option>
+  <option value="StriderSquads">Strider Squads</option>
+  <option value="BackToSchool">Back to School</option>
+  <option value="Kindness">Kindness Month</option>
+  <optgroup label="Competitions">
+    <option value="CompArt">Art</option>
+    <option value="CompCook">Cook Off</option>
+    <option value="CompInnovation">Innovation</option>
+    <option value="CompReel">Reel Me</option>
+    <option value="CompRobotics">Robotics</option>
+    <option value="CompTalent">Talent Show</option>
+    <option value="CompWriting">Writing</option>
+  </optgroup>
+  <optgroup label="Regular Email Series">
+    <option value="Midyear">Always On / Lead Nurture</option>
+    <option value="MPSAcq">MPS School Acquisition</option>
+    <option value="PVTAcq">Private School Acquisition</option>
+    <option value="Retention">Retention</option>
+    <option value="Welcome">Strong Start / Onboarding</option>
+  </optgroup>
+  <optgroup label="Regular Paid Media Campaigns">
+    <option value="Happier">Happier at K12</option>
+    <option value="Influencers">Influencers</option>
+    <option value="PSAH">Public School at Home</option>
+    <option value="Unboxing">Unboxing</option>
+  </optgroup>
+  <optgroup label="Regular Organic Social Campaigns">
+    <option value="TM">Teaching Moments</option>
+    <option value="Test">Testimonials</option>
+  </optgroup>
+  <option value="customp">Custom</option>
+</select>
+  
+  <input type="text" id="customProdCamp" placeholder="Enter custom product/campaign name" style="display: none; margin-top: 10px;">
+  
+  <label for="assettype">Asset Type</label>
+  <select id="assettype">
+    <option value="BRoll">B-roll</option>
+    <option value="Copy" selected>Copy</option>
+	<option value="DesignElement">Design Element</option>
+	<option value="Icon">Icon (2D or 3D)</option>	
+	<option value="Logo">Logo</option>
+	<option value="PDF">PDF</option>
+    <option value="Photo">Photography</option>	
+	<option value="Static">Static</option>	
+	<option value="Testimonial">Testimonial</option>
+    <option value="Video">Video</option>	
+  </select>
+  
+  <label for="destination">Destination</label>
+  <select id="destination">
+	<option value="Canva">Canva Template</option>    
+    <option value="Email">Email</option>
+	<option value="K12Zone">K12 Zone</option>	
+	<option value="Newsletter">Newsletter</option>
+	<option value="OLS">Online School Announcement</option>
+	<option value="Organic">Organic Social</option>
+    <option value="Paid">Paid</option>
+    <option value="PMLP">PMLP</option>
+	<option value="SMS">Text Messages</option>
+	<option value="Web" selected>Web</option>
+	<option value="">N/A</option>		
+  </select>
+
+  <label for="version">Version</label>
+  <select id="version">
+	<option value="">N/A</option>	  
+    <option value="V1">V1</option>
+    <option value="V2">V2</option>
+    <option value="V3">V3</option>
+    <option value="V3">V4</option>
+    <option value="V3">V5</option>	
+    <option value="Final">Final</option>
+  </select>
+  
+  <label for="channel">Channel</label>
+  <select id="channel">
+    <option value="FB">Facebook</option>
+    <option value="IN">Instagram</option>
+    <option value="TT">TikTok</option>
+    <option value="YT">YouTube</option>
+    <option value="YTS">YouTube Shorts</option>
+<optgroup label="SEM">	
+	<option value="RSA">RSA</option>
+	<option value="PMAX">PMAX</option>
+	<option value="SiteLink">Site Link</option>
+	<option value="Callout">Callout</option>
+</optgroup>			
+	<option value="TV">Television</option>
+						
+  </select>
+  
+  <label for="aspectratio">Aspect Ratio</label>
+  <select id="aspectratio">
+    <option value="">N/A</option>	  
+    <option value="16x9">wide 16 x 9</option>
+    <option value="1x1">square 1 x 1</option>
+    <option value="9x16">vertical 9 x 16</option>
+    <option value="4x5">tall 4 x 5</option>
+  </select>
+  
+   <label for="date">Date</label>
+   <div>For working files: Current date / For final assets: Delivery date</div>
+  <input type="date"
+  id="date"
+  value=today />
+
+  <label for="description">Custom description</label>
+  <input type="text" id="description" placeholder="e.g. file name">
+
+  <button id="genFile">Generate Filename</button>
+
+ <div id="output"></div>
+   <button onclick="copyText()">📋 Copy to Clipboard</button>
+
+  <script>
+	const brandSelect = document.getElementById('brand');
+	const customInput = document.getElementById('customBrand');
+
+	brandSelect.addEventListener('change', function() {
+	  if (this.value === 'custom') {
+	    customInput.style.display = 'block';
+	  } else {
+	    customInput.style.display = 'none';
+	  }
+	});
+	
+	const prodCampSelect = document.getElementById('prodcamp');
+	const customProdCampInput = document.getElementById('customProdCamp');
+
+	prodCampSelect.addEventListener('change', function() {
+	  if (this.value === 'customp') {
+	    customProdCampInput.style.display = 'block';
+	  } else {
+	    customProdCampInput.style.display = 'none';
+	  }
+	});
+	
+	async function writeClipboard(text) {
+	      const permission = await navigator.permissions.query({ name: 'clipboard-write' });
+	      if (permission.state === 'granted' || permission.state === 'prompt') {
+	        try {
+	          await navigator.clipboard.writeText(text);
+	          console.log('Text copied to clipboard');
+	        } catch (err) {
+	          console.error('Failed to write to clipboard:', err);
+	        }
+	      } else {
+	        console.log('Clipboard write permission not granted');
+	      }
+	    }
+
+	const genFile = document.getElementById('genFile');
+	
+	genFile.addEventListener('click', generateFilename);
+	
+    function generateFilename() {
+		
+      const brand = brandSelect.value === 'custom' ? customInput.value : brandSelect.value;
+      const prodcamp = prodCampSelect.value === 'customp' ? customProdCampInput.value : prodCampSelect.value;
+	  const destination = document.getElementById('destination').value;
+	  const assettype = document.getElementById('assettype').value;
+	  const channel = document.getElementById('channel').value;
+      const version = document.getElementById('version').value;
+	  const aspectratio = document.getElementById('aspectratio').value;
+      const description = document.getElementById('description').value.trim();
+      //const extension = document.getElementById('extension').value;
+      const date = document.getElementById('date').value;
+	
+		let newdate = date.replace(/-/g, "");
+		
+      let parts = [brand, prodcamp, assettype, destination, description, channel, aspectratio, version, newdate];
+  //    if (description) {
+  //      parts.push(description.replace(/\s+/g, ''));
+  //    }
+
+      const filename = parts.filter(part => part && part.trim() !== '').join('_');
+
+      document.getElementById('output').innerText = filename;
+    }
+	function copyText() {
+	            const textElement = document.getElementById('output');
+	            const text = textElement.innerText;
+
+	            if (navigator.clipboard && navigator.clipboard.writeText) {
+	                navigator.clipboard.writeText(text)
+	                    .then(() => {
+	                        alert('Text copied to clipboard!');
+	                    })
+	                    .catch(err => {
+	                        console.error('Failed to copy text: ', err);
+	                        alert('Failed to copy text.');
+	                    });
+	            } else {
+	                // Fallback for older browsers (less reliable in Google Sites iframe)
+	                const textarea = document.createElement('textarea');
+	                textarea.value = text;
+	                document.body.appendChild(textarea);
+	                textarea.select();
+	                document.execCommand('copy');
+	                document.body.removeChild(textarea);
+	                alert('Text copied to clipboard!');
+	            }
+	        }
+
+  </script>
+
+</body>
+</html>
